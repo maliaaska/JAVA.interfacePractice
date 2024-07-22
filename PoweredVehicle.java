@@ -1,6 +1,6 @@
 package com.milewskiarkadiuszmodul12;
 
-public interface PoweredVehicle {
+public interface PoweredVehicle extends Vehicle {
     void start();
     void turnOff();
 
