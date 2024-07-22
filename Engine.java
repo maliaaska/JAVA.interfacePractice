@@ -9,6 +9,7 @@ public class Engine {
 
    private String type;
    private FuelType fuel;
+    public Engine() {};
 
    public Engine (String type, FuelType fuel) {
        this.type = type;
