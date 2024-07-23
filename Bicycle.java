@@ -2,7 +2,7 @@ package com.milewskiarkadiuszmodul12;
 
 import java.util.Objects;
 
-public class Bicycle implements Vehicle {
+public class Bicycle implements Vehicle, PoweredVehicle {
     private String make;
     private String name;
     private int numbersOfGears;
@@ -39,6 +39,16 @@ public class Bicycle implements Vehicle {
     @Override
     public void stop() {
         System.out.println("The bicycle stops");
+    }
+
+    @Override
+    public void start() {
+
+    }
+
+    @Override
+    public void turnOff() {
+
     }
 
     @Override
