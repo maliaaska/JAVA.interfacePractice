@@ -1,6 +1,6 @@
 package com.milewskiarkadiuszmodul12;
 
-public class Car extends Engine implements Vehicle, PoweredVehicle {
+public class Car extends Engine implements Vehicle, PoweredVehicle, Alarm {
     private String make;
 
     private String name;
@@ -59,5 +59,15 @@ public class Car extends Engine implements Vehicle, PoweredVehicle {
                 ", numberOfDoors=" + numberOfDoors +
                 ", consumption=" + consumption +
                 "} " + super.toString();
+    }
+
+    @Override
+    public void turnAlarmOn() {
+        System.out.println("The alarm is on " + Alarm.sound);
+    }
+
+    @Override
+    public void turnAlarmOff() {
+        System.out.println("The alarm is off");
     }
 }

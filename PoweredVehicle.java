@@ -25,4 +25,9 @@ public interface PoweredVehicle extends Vehicle {
         }
         return true;
     }
+
+    /*TODO
+    Utwórz prywatne metody pomocnicze i wykorzystaj je w implementacji metod z interfejsów.
+Koniecznie wykorzystaj pole isSportBike i engine.
+     */
 }
