@@ -17,13 +17,16 @@ public class Car extends Engine implements PoweredVehicle, Alarm {
         this.consumption = consumption;
     }
 
-    public Car (String type, FuelType fuel, String make, String name, int numberOfDoors, double consumption, Engine engine) {
-        super(type, fuel);
+    public Car (String make, String name, int numberOfDoors, double consumption, String type, FuelType fuelType) {
         this.make = make;
         this.name = name;
         this.numberOfDoors = numberOfDoors;
         this.consumption = consumption;
-        this.engine = engine;
+        this.engine = new Engine(type, fuelType);
+
+    }
+
+    public Car(String opel, String astra, int i, double v, Engine carEngine) {
     }
 
 
