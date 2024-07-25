@@ -22,14 +22,13 @@ public class Motorcycle extends Engine implements PoweredVehicle {
 
 
 
-    //Dodaj dodatkowy konstruktor, który oprócz parametrów z klasy Car, przyjmuje też parametry z klasy Engine i tworzy obiekt silnika, przypisując go do pola engine.
-    public Motorcycle( String type, FuelType fuel, String make, String name, boolean isSportBike, double consumption){
-        super( type, fuel);
+    //Dodaj dodatkowy konstruktor, który oprócz parametrów z klasy Motorcycle, przyjmuje też parametry z klasy Engine i tworzy obiekt silnika, przypisując go do pola engine.
+    public Motorcycle( String type, FuelType fuel, String make, String name, boolean isSportBike, double consumption, String engineType, FuelType fuelType){
+        super( engineType, fuelType);
         this.make = make;
         this.name = name;
         this.isSportBike = isSportBike;
         this.consumption = consumption;
-        this.engine = new Engine(type, fuel);
         //TODO Dodaj dodatkowy konstruktor, który oprócz parametrów z klasy Motorcycle, przyjmuje też parametry z klasy Engine i tworzy obiekt silnika, przypisując go do pola engine.
     }
 

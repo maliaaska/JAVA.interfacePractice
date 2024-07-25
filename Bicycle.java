@@ -33,12 +33,12 @@ public class Bicycle implements Vehicle, PoweredVehicle {
     // Zaimplementuj metody drive() i stop() dla roweru, dostosowując je do specyfiki tego pojazdu.
     @Override
     public void drive() {
-        System.out.println("The bicycle drives");
+        System.out.println("The " + name +  "i s being pedaled");
     }
 
     @Override
     public void stop() {
-        System.out.println("The bicycle stops");
+        System.out.println("The " + name +  "is stopping.");
     }
 
     @Override

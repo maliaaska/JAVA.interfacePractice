@@ -1,12 +1,14 @@
 package com.milewskiarkadiuszmodul12;
 
-public class Car extends Engine implements Vehicle, PoweredVehicle, Alarm {
+public class Car extends Engine implements PoweredVehicle, Alarm {
     private String make;
 
     private String name;
     private int numberOfDoors;
 
     private double consumption;
+
+    private Engine engine;
 
     public Car ( String make, String name, int numberOfDoors, double consumption) {
         this.make = make;
@@ -15,50 +17,74 @@ public class Car extends Engine implements Vehicle, PoweredVehicle, Alarm {
         this.consumption = consumption;
     }
 
-    public Car (String type, FuelType fuel, String make, String name, int numberOfDoors, double consumption) {
+    public Car (String type, FuelType fuel, String make, String name, int numberOfDoors, double consumption, Engine engine) {
         super(type, fuel);
         this.make = make;
         this.name = name;
         this.numberOfDoors = numberOfDoors;
         this.consumption = consumption;
+        this.engine = engine;
     }
 
 
-
-    @Override
-    public void start() {
-        System.out.println("The car " + name + " started");
+    public String getMake() {
+        return make;
     }
 
-    @Override
-    public void turnOff() {
-        System.out.println("The car made " + make + " kilometers and stopped." );
+    public void setMake(String make) {
+        this.make = make;
     }
 
-    @Override
-    public double getFuelConsumption(int kilometers) {
-        System.out.println("The car burned " + consumption);
-        return PoweredVehicle.super.getFuelConsumption(kilometers);
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getNumberOfDoors() {
+        return numberOfDoors;
+    }
+
+    public void setNumberOfDoors(int numberOfDoors) {
+        this.numberOfDoors = numberOfDoors;
+    }
+
+    public double getConsumption() {
+        return consumption;
+    }
+
+    public void setConsumption(double consumption) {
+        this.consumption = consumption;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
     }
 
     @Override
     public void drive() {
-        System.out.println(" The best economic drive is when the car uses " + FuelType.LPG + " type of gasoline.");
+        System.out.println("The Car Drives forward");
     }
 
     @Override
     public void stop() {
-        System.out.println(" The car stopped. there is nothing left to say.");
+        System.out.println("The car just stopped");
     }
 
     @Override
-    public String toString() {
-        return "Car{" +
-                "make='" + make + '\'' +
-                ", name='" + name + '\'' +
-                ", numberOfDoors=" + numberOfDoors +
-                ", consumption=" + consumption +
-                "} " + super.toString();
+    public void start() {
+        System.out.println("The engine just turned on");
+    }
+
+    @Override
+    public void turnOff() {
+        System.out.println("The engine just turned off");
     }
 
     @Override

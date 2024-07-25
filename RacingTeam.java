@@ -1,12 +1,53 @@
 package com.milewskiarkadiuszmodul12;
 
-public class RacingTeam implements PoweredVehicle{
+public class RacingTeam implements PoweredVehicle {
+    private  PoweredVehicle[] vehicles;
 
-    Car car = new Car ("100 km", "opel", 4, 9.82);
-    Bicycle bicycle = new Bicycle("12 kilometers", "Romet", 6, true);
-    Motorcycle motorcycle = new Motorcycle("23 kilometers", "Yamaha", true, 4.84, new Engine("A typical bike", FuelType.DIESEL));
-    PoweredVehicle[] vehicles = new PoweredVehicle[] {car, bicycle, motorcycle};
+    //Dodaj konstruktor przyjmujący tablicę pojazdów i inicjalizujący pole w klasie.
+    public RacingTeam(PoweredVehicle[] vehicles) {
+        this.vehicles = vehicles;
+    }
 
+    public boolean canRace(int distance, double fuelAmount) {
+        double totalFuelConsumption = 0.0;
+        for ( PoweredVehicle vehicle : vehicles ) {
+            totalFuelConsumption += vehicle.getFuelConsumption(distance);
+        }
+        return totalFuelConsumption <= fuelAmount;
+    }
+
+    // Dodatkowa metoda do uruchamiania wszystkich pojazdów w zespole
+    public void startAllVehicles() {
+        for (PoweredVehicle vehicle : vehicles) {
+            vehicle.start();
+        }
+    }
+
+    // Dodatkowa metoda do włączania alarmu we wszystkich pojazdach w zespole
+    public void turnOnAllAlarms() {
+        for (PoweredVehicle vehicle : vehicles) {
+            if (vehicle instanceof Alarm) {
+                ((Alarm) vehicle).turnAlarmOn();
+            }
+        }
+    }
+
+    // Dodatkowa metoda do wyłączania alarmu we wszystkich pojazdach w zespole
+    public void turnOffAllAlarms() {
+        for (PoweredVehicle vehicle : vehicles) {
+            if (vehicle instanceof Alarm) {
+                ((Alarm) vehicle).turnAlarmOff();
+            }
+        }
+    }
+
+    public PoweredVehicle[] getVehicle() {
+        return vehicles;
+    }
+
+    public void setPoweredVehicle(Vehicle[] vehicle) {
+        this.vehicles = vehicles;
+    }
 
     @Override
     public void start() {
@@ -26,4 +67,5 @@ public class RacingTeam implements PoweredVehicle{
     @Override
     public void stop() {
     }
+
 }
