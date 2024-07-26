@@ -14,6 +14,7 @@ public class Main {
 //
 //        PoweredVehicle checkSpeed = new Motorcycle("I think quick", "CBR", true, 2.4, new Engine("3 strokes", FuelType.PETROL));
 //        checkSpeed.drive();
+
         Engine carEngine = new Engine("V8", FuelType.DIESEL);
         Car car1 = new Car("Opel", "Astra", 4, 9.78, carEngine);
         System.out.println(car1);
@@ -27,7 +28,7 @@ public class Main {
         System.out.println(bicycle);
 
         // Tworzenie tablicy pojazdów
-        PoweredVehicle[] vehicles = {car1, motorcycle };
+        PoweredVehicle[] vehicles = {car1, motorcycle};
 
         // Tworzenie obiektu RacingTeam
         RacingTeam team = new RacingTeam(vehicles);
@@ -52,6 +53,5 @@ public class Main {
     }
 
 
-    }
-
 }
+
